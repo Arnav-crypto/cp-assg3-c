@@ -1,0 +1,44 @@
+/*
+  Roll No.:1
+  Student Name:arnav
+  Program Title:calculate sum of digit of a number
+
+  Task Given By:yash wadhkar
+    - Roll No. of Assignee:
+    - Assignee Name:yash wadhkar
+*/
+
+
+
+#include <stdio.h>
+
+// Function to calculate the sum of digits of a number
+int sum_of_digits(int num) {
+    int sum = 0;
+    
+    // Loop to extract each digit and add it to sum
+    while (num != 0) {
+        sum += num % 10;  // Get the last digit
+        num /= 10;         // Remove the last digit
+    }
+    
+    return sum;
+}
+
+int main() {
+    int num;
+
+    // Taking input from the user
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Checking if the number is negative
+    if (num < 0) {
+        num = -num;  // If negative, convert it to positive
+    }
+
+    // Calculating and printing the sum of digits
+    printf("The sum of the digits is: %d\n", sum_of_digits(num));
+
+    return 0;
+}
